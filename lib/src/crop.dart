@@ -332,53 +332,53 @@ class CropState extends State<Crop> with TickerProviderStateMixin, Drag {
   }
 
   _CropHandleSide _hitCropHandle(Offset? localPoint) {
-    final boundaries = _boundaries;
-    if (localPoint == null || boundaries == null) {
-      return _CropHandleSide.none;
-    }
+//     final boundaries = _boundaries;
+//     if (localPoint == null || boundaries == null) {
+//       return _CropHandleSide.none;
+//     }
 
-    final viewRect = Rect.fromLTWH(
-      boundaries.width * _area.left,
-      boundaries.height * _area.top,
-      boundaries.width * _area.width,
-      boundaries.height * _area.height,
-    ).deflate(_kCropHandleSize / 2);
+//     final viewRect = Rect.fromLTWH(
+//       boundaries.width * _area.left,
+//       boundaries.height * _area.top,
+//       boundaries.width * _area.width,
+//       boundaries.height * _area.height,
+//     ).deflate(_kCropHandleSize / 2);
 
-    if (Rect.fromLTWH(
-      viewRect.left - _kCropHandleHitSize / 2,
-      viewRect.top - _kCropHandleHitSize / 2,
-      _kCropHandleHitSize,
-      _kCropHandleHitSize,
-    ).contains(localPoint)) {
-      return _CropHandleSide.topLeft;
-    }
+//     if (Rect.fromLTWH(
+//       viewRect.left - _kCropHandleHitSize / 2,
+//       viewRect.top - _kCropHandleHitSize / 2,
+//       _kCropHandleHitSize,
+//       _kCropHandleHitSize,
+//     ).contains(localPoint)) {
+//       return _CropHandleSide.topLeft;
+//     }
 
-    if (Rect.fromLTWH(
-      viewRect.right - _kCropHandleHitSize / 2,
-      viewRect.top - _kCropHandleHitSize / 2,
-      _kCropHandleHitSize,
-      _kCropHandleHitSize,
-    ).contains(localPoint)) {
-      return _CropHandleSide.topRight;
-    }
+//     if (Rect.fromLTWH(
+//       viewRect.right - _kCropHandleHitSize / 2,
+//       viewRect.top - _kCropHandleHitSize / 2,
+//       _kCropHandleHitSize,
+//       _kCropHandleHitSize,
+//     ).contains(localPoint)) {
+//       return _CropHandleSide.topRight;
+//     }
 
-    if (Rect.fromLTWH(
-      viewRect.left - _kCropHandleHitSize / 2,
-      viewRect.bottom - _kCropHandleHitSize / 2,
-      _kCropHandleHitSize,
-      _kCropHandleHitSize,
-    ).contains(localPoint)) {
-      return _CropHandleSide.bottomLeft;
-    }
+//     if (Rect.fromLTWH(
+//       viewRect.left - _kCropHandleHitSize / 2,
+//       viewRect.bottom - _kCropHandleHitSize / 2,
+//       _kCropHandleHitSize,
+//       _kCropHandleHitSize,
+//     ).contains(localPoint)) {
+//       return _CropHandleSide.bottomLeft;
+//     }
 
-    if (Rect.fromLTWH(
-      viewRect.right - _kCropHandleHitSize / 2,
-      viewRect.bottom - _kCropHandleHitSize / 2,
-      _kCropHandleHitSize,
-      _kCropHandleHitSize,
-    ).contains(localPoint)) {
-      return _CropHandleSide.bottomRight;
-    }
+//     if (Rect.fromLTWH(
+//       viewRect.right - _kCropHandleHitSize / 2,
+//       viewRect.bottom - _kCropHandleHitSize / 2,
+//       _kCropHandleHitSize,
+//       _kCropHandleHitSize,
+//     ).contains(localPoint)) {
+//       return _CropHandleSide.bottomRight;
+//     }
 
     return _CropHandleSide.none;
   }
@@ -704,7 +704,7 @@ class _CropPainter extends CustomPainter {
 
     if (boundaries.isEmpty == false) {
       _drawGrid(canvas, boundaries);
-      _drawHandles(canvas, boundaries);
+//       _drawHandles(canvas, boundaries);
     }
 
     canvas.restore();
